@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import List from '../list/list';
 import Filters from '../filters/filters';
+import clientInfo from '../../Types/clientInfo';
 import 'whatwg-fetch';
 
 class ListContainer extends Component {
@@ -64,7 +65,7 @@ class ListContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('https://weedmaps.com/dispensaries/native-roots-apothecary/menu_items.json')
+    fetch(clientInfo.apiURL)
       .then(data => {
         return data.json();
       })
