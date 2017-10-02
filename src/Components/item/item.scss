@@ -85,13 +85,25 @@
     display: inline-block;
   }
 
+  .starting-at {
+    font-size: .5em;
+  }
+
+  .price {
+    font-weight: bold;
+  }
+
   .item-summary {
     font-size: 0.8em;
     padding: $padding;
     padding-top: 0;
     overflow-y: hidden;
-
   }
+
+  .date-created {
+    text-align: right;
+  }
+
   .fader {
     position: absolute;
     bottom: 0;

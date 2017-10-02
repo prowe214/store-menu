@@ -18,6 +18,8 @@ class ListContainer extends Component {
     }
     this.handleFilterChange = this.handleFilterChange.bind(this);
     this.sortByName = this.sortByName.bind(this);
+    this.sortByPrice = this.sortByPrice.bind(this);
+    this.sortByOldest = this.sortByOldest.bind(this);
     this.getLowestPrice = this.getLowestPrice.bind(this);
 
   }
@@ -48,15 +50,17 @@ class ListContainer extends Component {
   }
 
   sortByPrice(arr, reverse) {
-    let result = arr.sort( (a, b) => {
+    return arr.sort( (a, b) => {
       const priceA = this.getLowestPrice(a);
       const priceB = this.getLowestPrice(b);
       return (priceA > priceB) ? -1 : (priceA < priceB) ? 1 : 0;
     })
+  }
 
-    if (reverse) result.reverse();
-
-    return result;
+  sortByOldest(arr) {
+    return arr.sort( (a, b) => {
+      return new Date(a.created_at) - new Date(b.created_at);
+    })
   }
 
   componentDidMount() {
@@ -89,7 +93,13 @@ class ListContainer extends Component {
         displayedItems = this.sortByPrice(displayedItems);
         break
       case 'low to high': 
-        displayedItems = this.sortByPrice(displayedItems, true);
+        displayedItems = this.sortByPrice(displayedItems).reverse();
+        break
+      case 'newest':
+        displayedItems = this.sortByOldest(displayedItems).reverse();
+        break
+      case 'oldest':
+        displayedItems = this.sortByOldest(displayedItems);
         break
       default:
         break;

@@ -9,6 +9,10 @@ class Item extends Component {
     return categories[this.props.data.menu_item_category_id];
   }
 
+  get date() {
+    return new Date(this.props.data.created_at).toDateString();
+  }
+
   get price() {
     const prices = [
       this.props.data.price_eighth,
@@ -33,7 +37,7 @@ class Item extends Component {
           <div className={'subheader ' + (this.category || 'Other')}>
             <span>{this.category || 'Other'}</span>
             <div className="item-price">
-              <span>Starting at </span>
+              <span className="starting-at">Starting at </span>
               <span className="price">${this.price}</span>
             </div>
           </div>
@@ -41,6 +45,9 @@ class Item extends Component {
         <div className="item-summary">
           <h2 className="item-title">{this.props.data.name}</h2>
           <p>{this.props.data.body || 'No description'}</p>
+          <div className="date-created">
+            <span>Added on {this.date}</span>
+          </div>
         </div>
         <div className="fader"></div>
       </div>

@@ -116,11 +116,17 @@ html {
       color: #ffffff; }
   .item .item-price {
     display: inline-block; }
+  .item .starting-at {
+    font-size: .5em; }
+  .item .price {
+    font-weight: bold; }
   .item .item-summary {
     font-size: 0.8em;
     padding: 15px;
     padding-top: 0;
     overflow-y: hidden; }
+  .item .date-created {
+    text-align: right; }
   .item .fader {
     position: absolute;
     bottom: 0;

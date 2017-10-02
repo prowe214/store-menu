@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import categories from '../../Types/ICategories';
 
 class Dropdown extends Component {
   constructor() {
