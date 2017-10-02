@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Dropdown from '../dropdown/dropdown';
 import categories from '../../Types/ICategories';
+import sortOptions from '../../Types/ISortOptions';
 
 class Filters extends Component {
 
@@ -24,6 +25,7 @@ class Filters extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleShowFilters = this.handleShowFilters.bind(this);
+    this.handleClearFilters = this.handleClearFilters.bind(this);
   }
 
   handleChange = (e) => {
@@ -49,6 +51,17 @@ class Filters extends Component {
     this.setState({showFilters: !this.state.showFilters});
   }
 
+  handleClearFilters() {
+    const newState = {
+      category: 0,
+      searchTerm: '',
+      sortBy: '',
+      showFilters: false
+    }
+    this.setState(newState);
+    this.props.onFilterChange(newState);
+  }
+
   render() {
     return (
       <div className="filters">
@@ -60,29 +73,22 @@ class Filters extends Component {
           </div>
           <div className={"inputs" + (!this.state.showFilters ? ' hide' : '')}>
             <input type="text" name="searchTerm" value={this.searchTerm} placeholder="Search..." onChange={this.handleChange}/>
-            <select id="categories" name="category" value={this.state.category} onChange={this.handleChange}>
-              <option value="0">All</option>
-              {Object.keys(categories).map(key => {
-                return <option key={key} value={key}>{categories[key]}s</option>
-              })}
-            </select>
-            <select name="sortBy" value={this.state.sortBy} placeholder="Sort By..." onChange={this.handleChange}>
-              <option style={{display: 'none'}}>Sort By...</option>
-              <option value="alpha">Alphabetically</option>
-              <option value="high to low">Price: Highest to Lowest</option>
-              <option value="low to high">Price: Lowest to Highest</option>
-            </select>
 
             <Dropdown
               data={this.categories}
               plurals={true}
               inputPlaceholder="Category"
               inputName="category"
-              name="category"
               onFilterChange={this.handleChange}
               allOption="All" />
 
-            <button onClick={this.handleShowFilters}>X</button>
+            <Dropdown
+              data={sortOptions}
+              inputPlaceholder="Sort By..."
+              inputName="sortBy"
+              onFilterChange={this.handleChange} />
+
+            <button onClick={this.handleClearFilters}><i className="fa fa-times" /></button>
           </div>
         </div>
       </div>

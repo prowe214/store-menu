@@ -22,12 +22,36 @@ html {
   background-image: linear-gradient(to top right, #2E8BA3, #6ddee3); }
 
 .header {
-  background-color: #555;
+  background-color: white;
   padding: 20px 50px;
-  color: white; }
+  color: #000000;
+  text-align: center;
+  height: 75px;
+  box-shadow: 0 5px 3px black;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em; }
+  .header .client-logo {
+    display: inline-block;
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1000px;
+    box-shadow: 0 5px 3px black; }
 
 .list-container {
-  padding: 50px; }
+  padding: 50px;
+  padding-top: 150px;
+  height: calc(100vh);
+  overflow-y: scroll; }
 
 .item {
   border-radius: 5px;
@@ -129,6 +153,8 @@ html {
       background: #f2f2f2; }
     .filters input[type="text"]:last-child, .filters select:last-child, .filters button:last-child {
       margin-right: 5px; }
+  .filters input[type="text"] {
+    cursor: auto; }
   .filters button {
     background: white;
     padding: 5px 10px; }
@@ -137,3 +163,28 @@ html {
       background: #f2f2f2; }
   .filters .hide {
     display: none; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .footer * {
+    margin-right: 15px; }
+  .footer a {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none; }
+    .footer a i {
+      font-size: 1.5em; }
+    .footer a:hover {
+      color: yellow; }
+    .footer a:visited {
+      color: white; }

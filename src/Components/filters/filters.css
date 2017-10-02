@@ -19,6 +19,8 @@
       background: #f2f2f2; }
     .filters input[type="text"]:last-child, .filters select:last-child, .filters button:last-child {
       margin-right: 5px; }
+  .filters input[type="text"] {
+    cursor: auto; }
   .filters button {
     background: white;
     padding: 5px 10px; }

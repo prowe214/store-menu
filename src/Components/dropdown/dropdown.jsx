@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import categories from '../../Types/ICategories';
 
 class Dropdown extends Component {
-
   constructor() {
     super();
 
@@ -12,14 +11,10 @@ class Dropdown extends Component {
   }
 
   handleChange = (e) => {
-    const changedKey = e.target.name;
-    const value = e.target.value;
-    const newState = this.state;
-
-    newState.selected = Number(newState.value)
-
-    this.setState(newState);
-    this.props.onFilterChange(newState);
+    this.props.onFilterChange(e);
+    this.setState({
+      selected: e.target.value
+    })
   }
 
   render() {

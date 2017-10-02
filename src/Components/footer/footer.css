@@ -1,0 +1,24 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .footer * {
+    margin-right: 15px; }
+  .footer a {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none; }
+    .footer a i {
+      font-size: 1.5em; }
+    .footer a:hover {
+      color: yellow; }
+    .footer a:visited {
+      color: white; }

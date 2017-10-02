@@ -1,2 +1,5 @@
 .list-container {
-  padding: 50px; }
+  padding: 50px;
+  padding-top: 150px;
+  height: calc(100vh);
+  overflow-y: scroll; }
