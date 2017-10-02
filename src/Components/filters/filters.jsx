@@ -32,14 +32,12 @@ class Filters extends Component {
     const changedKey = e.target.name;
     const value = e.target.value;
     const newState = this.state;
-    const filterKeys = Object.keys(newState);
 
-    //USE FOR/IN
-    filterKeys.forEach(filterKey => {
+    for (let filterKey in newState) {
       if (changedKey === filterKey) {
         newState[changedKey] = value;
       }
-    })
+    }
 
     newState.category = Number(newState.category)
 

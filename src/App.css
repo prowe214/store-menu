@@ -52,11 +52,11 @@ html {
   padding: 50px;
   padding-top: 150px;
   height: calc(100vh);
+  width: 100%;
   overflow-y: scroll; }
 
 .item {
   border-radius: 5px;
-  flex-grow: 1;
   margin: 5px;
   position: relative;
   width: 32%;
@@ -72,7 +72,6 @@ html {
     background-image: none;
     box-shadow: 0 5px 5px;
     max-height: 1000px;
-    min-height: 150px;
     -webkit-transition: height 1s ease-in;
     transition: max-height 1s ease-in; }
   .item .item-header {
@@ -88,6 +87,7 @@ html {
   .item .subheader {
     padding: 5px 15px;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     box-shadow: 0 2px 3px grey; }
     .item .subheader.Sativa {

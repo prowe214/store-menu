@@ -10,7 +10,6 @@
 
 .item {
   border-radius: 5px;
-  flex-grow: 1;
   margin: 5px;
   position: relative;
   width: 32%;
@@ -30,7 +29,6 @@
     background-image: none;
     box-shadow: 0 5px 5px;
     max-height: 1000px;
-    min-height: 150px;
     -webkit-transition: height 1s ease-in;
     transition: max-height 1s ease-in;
   }
@@ -52,6 +50,7 @@
   .subheader {
     padding: $slim-padding;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     box-shadow: 0 2px 3px grey;
 

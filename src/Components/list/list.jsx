@@ -6,7 +6,6 @@ class List extends Component {
 
   render() {
     if (!this.props.loaded) {
-      // return <img alt="loader" src="../img/leaf.png" className="loader"/>
       return <h1>Loading...</h1>
     } else {
       return (
