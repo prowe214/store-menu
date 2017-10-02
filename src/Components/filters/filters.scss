@@ -1,0 +1,43 @@
+.filters {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+
+  .container {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  input[type="text"], select, button {
+    background: white;
+    border: 1px solid grey;
+    vertical-align: middle;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: darken(white, 5%)
+    }
+
+    &:last-child {
+      margin-right: 5px;
+    }
+  }
+
+  button {
+    background: white;
+    padding: 5px 10px;
+    &:hover {
+      cursor: pointer;
+      background: darken(white, 5%)
+    }
+  }
+
+  .hide { 
+    display: none; 
+  }
+}

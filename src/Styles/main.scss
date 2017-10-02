@@ -1,0 +1,31 @@
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  font-weight: normal;
+  src: url('./Styles/SF-Pro-Text-Regular.otf') format('opentype')
+}
+@font-face {
+  font-family: 'SFPro';
+  font-weight: bold;
+  src: url('./Styles/SF-Pro-Text-Semibold.otf') format('opentype')
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'SFPro';
+  font-weight: normal;
+}
+
+html {
+  height: 100%;
+  background-image: linear-gradient(
+    to top right,
+    map-get($colors, primary), 
+    lighten(map-get($colors, accent-primary), 20%)
+  );
+}

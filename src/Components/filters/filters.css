@@ -1,0 +1,29 @@
+.filters {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px; }
+  .filters .container {
+    display: inline-block;
+    margin-left: auto; }
+  .filters input[type="text"], .filters select, .filters button {
+    background: white;
+    border: 1px solid grey;
+    vertical-align: middle;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 10px;
+    cursor: pointer; }
+    .filters input[type="text"]:hover, .filters select:hover, .filters button:hover {
+      background: #f2f2f2; }
+    .filters input[type="text"]:last-child, .filters select:last-child, .filters button:last-child {
+      margin-right: 5px; }
+  .filters button {
+    background: white;
+    padding: 5px 10px; }
+    .filters button:hover {
+      cursor: pointer;
+      background: #f2f2f2; }
+  .filters .hide {
+    display: none; }
